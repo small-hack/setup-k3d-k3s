@@ -14,7 +14,7 @@ jobs:
     name: Install latest
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./  # normally: nolar/setup-k3d-k3s@v1
       - run: kubectl version
 
@@ -26,7 +26,7 @@ jobs:
     name: Install ${{ matrix.k3s }}
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./  # normally: nolar/setup-k3d-k3s@v1
         with:
           version: ${{ matrix.k3s }}
@@ -37,7 +37,7 @@ jobs:
     name: Check outputs
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./  # normally: nolar/setup-k3d-k3s@v1
         with:
           version: latest
@@ -52,7 +52,7 @@ jobs:
     name: Skip creation
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./  # normally: nolar/setup-k3d-k3s@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -62,7 +62,7 @@ jobs:
     name: Skip readiness
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./  # normally: nolar/setup-k3d-k3s@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -73,7 +73,7 @@ jobs:
     name: Multi-cluster
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./  # normally: nolar/setup-k3d-k3s@v1
         with:
           version: v1.24
@@ -89,7 +89,7 @@ jobs:
     name: Custom K3d tag
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./  # normally: nolar/setup-k3d-k3s@v1
         with:
           version: v1.25
@@ -100,7 +100,7 @@ jobs:
     name: Custom args
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./  # normally: nolar/setup-k3d-k3s@v1
         with:
           version: v1.25
